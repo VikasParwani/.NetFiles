@@ -231,7 +231,42 @@ class Q7
 {
     public void func7()
     {
+        string student;
+        int i,p=0,a=0;
+        bool attendance;
 
+        Console.WriteLine("Enter the name of the student");
+        student = Console.ReadLine();
+
+        for (i = 0; i < 5; i++)
+        {
+            Console.WriteLine("\nEnter attendance for day:" + (i + 1));
+            Console.WriteLine("Write Y for present and N for absent");
+            string x = Console.ReadLine();
+            if (x.Contains("Y") || x.Contains("y"))
+            {
+                attendance = true;
+                p++;
+            }
+            else if (x.Contains("N") || x.Contains("n"))
+            {
+                attendance = false;
+                a++;
+            }
+           else
+            {
+            Console.WriteLine("Invalid Choice");  
+            }
+        }
+        Console.WriteLine("Total days attended are:" + p);
+        if (p == 5) 
+        { 
+            Console.WriteLine(student + " has perfect attendance!");
+        }
+        else
+        {
+            Console.WriteLine(student + " does not has perfect attendance!");
+        }
     }
 }
 class Q8
